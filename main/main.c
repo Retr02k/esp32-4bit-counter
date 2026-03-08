@@ -7,7 +7,7 @@
 #define	BUTTON		4
 #define LED_COUNT	4
 
-const int led[] = {5, 18, 19, 21};
+const int led[] = {19, 18, 17, 16};
 
 int	button_press(int state) {
 	static	int last_state = 0;
@@ -47,7 +47,7 @@ void app_main() {
 		
 		if (button_press(button_state)){
 			counter = (counter + 1) % (1 << LED_COUNT);
-			printf("Button pressed!");
+			printf("Button pressed! Counter: %d\n", counter);
 			toggle_led(counter);
 		}
 		
